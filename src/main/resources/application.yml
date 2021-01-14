@@ -1,13 +1,13 @@
 quarkus:
   kubernetes:
     ports:
-      - debug:
+      debug:
         container-port: 5005
         protocol: TCP
     env:
       configmaps: test-config
       vars:
-        quarkus.kubernetes-config.enabled: "true"
+        quarkus_kubernetes-config_enabled: "true"
         JAVA_OPTIONS: -agentlib:jdwp=transport=dt_socket,address=*:5005,server=y,suspend=n
   kubernetes-config:
     config-maps: test-config
